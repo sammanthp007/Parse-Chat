@@ -1,6 +1,6 @@
 # Project 1 - Parse Chat
 
-Tumblr Feed is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+Parse Chat is a chat app using the [Parse](https://parseplatform.github.io/).
 
 Time spent: 0.2 hours spent in total
 
