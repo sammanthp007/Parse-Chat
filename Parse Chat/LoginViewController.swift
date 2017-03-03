@@ -32,10 +32,13 @@ class LoginViewController: UIViewController {
         newUser.email = inp_email
         newUser.password = inp_password
         
+        
         newUser.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
             if let error = error {
                 let alertController = UIAlertController(title: "Error has happened", message: "bruh", preferredStyle: .alert)
+                
+                //present(alertController, animated: true)
                 
                 // Show the errorString somewhere and let the user try again.
             } else {
@@ -44,11 +47,22 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // allows users to login
+    func login(inp_email: String, inp_password: String) {
+        let alertController = UIAlertController(title: "This is title", message: "message part", preferredStyle: .alert)
+        
+        present(alertController, animated: true)
+    }
+    
     // button actions
     @IBAction func onSignup(_ sender: Any) {
         signup(inp_email: emailTextField.text!, inp_password: passwordTextField.text!)
     }
     
+    
+    @IBAction func onLogin(_ sender: Any) {
+        login(inp_email: "thisiemail", inp_password: "passowrasd")
+    }
 
     /*
     // MARK: - Navigation
