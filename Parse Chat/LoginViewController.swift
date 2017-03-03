@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +24,29 @@ class LoginViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // allows users to sign up
+    func signup(inp_email: String, inp_password : String) {
+        var newUser = PFUser()
+        newUser.email = inp_email
+        newUser.password = inp_password
+        
+        newUser.signUpInBackground {
+            (succeeded: Bool, error: Error?) -> Void in
+            if let error = error {
+                let alertController = UIAlertController(title: "Error has happened", message: "bruh", preferredStyle: .alert)
+                
+                // Show the errorString somewhere and let the user try again.
+            } else {
+                // Hooray! Let them use the app now.
+            }
+        }
+    }
+    
+    // button actions
+    @IBAction func onSignup(_ sender: Any) {
+        signup(inp_email: emailTextField.text!, inp_password: passwordTextField.text!)
     }
     
 
