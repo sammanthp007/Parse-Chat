@@ -28,16 +28,22 @@ class LoginViewController: UIViewController {
     
     // allows users to sign up
     func signup(inp_email: String, inp_password : String) {
-        var newUser = PFUser()
+        let newUser = PFUser()
         newUser.email = inp_email
         newUser.password = inp_password
         
         
         newUser.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
-            if let error = error {
+            if error != nil {
                 let alertController = UIAlertController(title: "Try again", message: "Username or Password is not valid", preferredStyle: .alert)
                 
+                // add ok button
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: {
+                    (action) in
+                })
+                
+                alertController.addAction(okAction)
                 
                 //present(alertController, animated: true)
                 
@@ -63,12 +69,44 @@ class LoginViewController: UIViewController {
     
     // button actions
     @IBAction func onSignup(_ sender: Any) {
-        signup(inp_email: emailTextField.text!, inp_password: passwordTextField.text!)
+        let email = emailTextField.text! as String
+        let password = passwordTextField.text! as String
+        
+        if email != "" && password != ""{
+        signup(inp_email: email, inp_password: password)
+    }
+        else {
+            let alertController = UIAlertController(title: "Empty Email or Password", message: "Email or password cannot be empty", preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
+            })
+            
+            alertController.addAction(okButton)
+            
+            present(alertController, animated: true)
+        }
     }
     
     
     @IBAction func onLogin(_ sender: Any) {
-        login(inp_email: "thisiemail", inp_password: "passowrasd")
+        let email = emailTextField.text! as String
+        let password = passwordTextField.text! as String
+
+        if email != "" && password != ""{
+            login(inp_email: email, inp_password: password)
+        }
+        else {
+            let alertController = UIAlertController(title: "Empty Email or Password", message: "Email or password cannot be empty", preferredStyle: .alert)
+            
+            let okButton = UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
+            })
+            
+            alertController.addAction(okButton)
+            
+            present(alertController, animated: true)
+        }
+        
+        
     }
 
     /*
