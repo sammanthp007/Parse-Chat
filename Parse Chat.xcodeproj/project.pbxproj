@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E500F8E1E69FF8F003E2010 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E500F8D1E69FF8F003E2010 /* LoginViewController.swift */; };
 		5E5DFE151E6388A400BEF807 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DFE141E6388A400BEF807 /* AppDelegate.swift */; };
-		5E5DFE171E6388A400BEF807 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DFE161E6388A400BEF807 /* ViewController.swift */; };
 		5E5DFE1A1E6388A400BEF807 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5DFE181E6388A400BEF807 /* Main.storyboard */; };
 		5E5DFE1C1E6388A400BEF807 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E5DFE1B1E6388A400BEF807 /* Assets.xcassets */; };
 		5E5DFE1F1E6388A400BEF807 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E5DFE1D1E6388A400BEF807 /* LaunchScreen.storyboard */; };
@@ -18,9 +18,9 @@
 /* Begin PBXFileReference section */
 		46F05E1FF340639C3A4E69E3 /* Pods_Parse_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parse_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52871CA1C19E556DDD73DF00 /* Pods-Parse Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Parse Chat/Pods-Parse Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		5E500F8D1E69FF8F003E2010 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E5DFE111E6388A400BEF807 /* Parse Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parse Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5DFE141E6388A400BEF807 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E5DFE161E6388A400BEF807 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5E5DFE191E6388A400BEF807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E5DFE1B1E6388A400BEF807 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E5DFE1E1E6388A400BEF807 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +40,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E500F8A1E69FF5D003E2010 /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E500F8D1E69FF8F003E2010 /* LoginViewController.swift */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		5E500F8B1E69FF65003E2010 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		5E5DFE081E6388A400BEF807 = {
 			isa = PBXGroup;
 			children = (
@@ -61,8 +76,9 @@
 		5E5DFE131E6388A400BEF807 /* Parse Chat */ = {
 			isa = PBXGroup;
 			children = (
+				5E500F8B1E69FF65003E2010 /* views */,
+				5E500F8A1E69FF5D003E2010 /* view controllers */,
 				5E5DFE141E6388A400BEF807 /* AppDelegate.swift */,
-				5E5DFE161E6388A400BEF807 /* ViewController.swift */,
 				5E5DFE181E6388A400BEF807 /* Main.storyboard */,
 				5E5DFE1B1E6388A400BEF807 /* Assets.xcassets */,
 				5E5DFE1D1E6388A400BEF807 /* LaunchScreen.storyboard */,
@@ -212,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5DFE171E6388A400BEF807 /* ViewController.swift in Sources */,
+				5E500F8E1E69FF8F003E2010 /* LoginViewController.swift in Sources */,
 				5E5DFE151E6388A400BEF807 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +395,7 @@
 				5E5DFE251E6388A400BEF807 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
