@@ -36,7 +36,8 @@ class LoginViewController: UIViewController {
         newUser.signUpInBackground {
             (succeeded: Bool, error: Error?) -> Void in
             if let error = error {
-                let alertController = UIAlertController(title: "Error has happened", message: "bruh", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Try again", message: "Username or Password is not valid", preferredStyle: .alert)
+                
                 
                 //present(alertController, animated: true)
                 
@@ -50,6 +51,12 @@ class LoginViewController: UIViewController {
     // allows users to login
     func login(inp_email: String, inp_password: String) {
         let alertController = UIAlertController(title: "This is title", message: "message part", preferredStyle: .alert)
+        
+        // add cancel button
+        let cancelAction = UIAlertAction(title: "OK", style: .cancel) {
+            (action) in
+        }
+        alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
     }
