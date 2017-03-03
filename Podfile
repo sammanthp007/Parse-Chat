@@ -7,5 +7,6 @@ use_frameworks!
 
 # Pods for Parse Chat
 pod 'AFNetworking', '~> 3.0'
+pod 'Parse'
 pod 'BDBOAuth1Manager'
 end
