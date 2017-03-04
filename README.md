@@ -8,11 +8,11 @@ Time spent: 0.2 hours spent in total
 
 The following **required** functionality is complete:
 
-- [ ] Setup
-- [ ] Create a Login Screen
-- [ ] Send a Chat message
-- [ ] View the Chat room
-- [ ] Associating Users with messages
+- [x] Setup
+- [x] Create a Login Screen
+- [x] Send a Chat message
+- [x] View the Chat room
+- [x] Associating Users with messages
 
 The following **optional** features are implemented:
 
