@@ -13,7 +13,7 @@ class MessageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
     
-    var messages: PFObject {
+    var messages: PFObject! {
         didSet {
             messageLabel.text = messages["text"] as? String
         }
