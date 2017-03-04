@@ -30,13 +30,12 @@ class LoginViewController: UIViewController {
     func signup(inp_email: String, inp_password : String) {
         let newUser = PFUser()
         
-        newUser.email = inp_email
+        newUser.username = inp_email
         newUser.password = inp_password
         
         newUser.signUpInBackground {(succeeded: Bool, error: Error?)-> Void in
             if let error = error {
                 let errorString = error.localizedDescription
-                print (">>>>>>came here?")
                 let alertController = UIAlertController(title: "Try again", message: errorString, preferredStyle: .alert)
                 
                 // add ok button
