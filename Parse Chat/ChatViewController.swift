@@ -21,22 +21,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextViewDel
 
         // Do any additional setup after loading the view.
         
-        var query = PFQuery(className:"Message")
+        let query = PFQuery(className:"Message")
         query.whereKeyExists("text")
         query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
                 // The find succeeded.
+                self.messages = objects
                 print("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
-                if let objects = objects {
-                    for object in objects {
-                        print(object.objectId)
-                    }
-                }
+                self.tableView.reloadData()
+
             } else {
                 // Log details of the failure
-                print("Error: \(error!) \(error!.userInfo)")
+                print("Error: \(error!) \(error?.localizedDescription)")
             }
         }
     }
