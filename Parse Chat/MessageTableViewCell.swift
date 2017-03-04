@@ -15,7 +15,7 @@ class MessageTableViewCell: UITableViewCell {
     
     var messages: PFObject! {
         didSet {
-            messageLabel.text = messages["text"] as? String
+            messageLabel.text = messages.object(forKey: "text") as? String
         }
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ChatViewController: UIViewController, UITableViewDataSource, UITextViewDelegate {
+class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var messageText: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,11 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextViewDel
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
+        tableView.delegate = self
+        // for the cell to autoresize
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         let query = PFQuery(className:"Message")
         query.whereKeyExists("text")
@@ -28,13 +33,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextViewDel
             if error == nil {
                 // The find succeeded.
                 self.messages = objects
-                print("Successfully retrieved \(objects!.count) scores.")
-                // Do something with the found objects
+                print(">>>>>>>>>>>>>>>>>Successfully retrieved \(objects!.count) messages.")
                 self.tableView.reloadData()
 
             } else {
                 // Log details of the failure
-                print("Error: \(error!) \(error?.localizedDescription)")
+                print("<><><><>Error: \(error?.localizedDescription)")
             }
         }
     }
@@ -48,9 +52,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITextViewDel
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath) as! MessageTableViewCell
-        
         cell.messages = (self.messages?[indexPath.row])!
-        
         return cell
     }
     override func didReceiveMemoryWarning() {
