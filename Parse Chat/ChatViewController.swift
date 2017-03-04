@@ -31,7 +31,7 @@ class ChatViewController: UIViewController {
         print (messageText.text ?? "Nothing")
         if messageText.text != "" {
             let message = PFObject(className: "Message")
-            message["text"] = messageText
+            message["text"] = messageText.text
             message.saveInBackground(block: {(success: Bool?, error: Error?) in
                 if success == true {
                     print ("message sent")
