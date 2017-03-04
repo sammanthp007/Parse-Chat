@@ -29,12 +29,14 @@ class LoginViewController: UIViewController {
     // allows users to sign up
     func signup(inp_email: String, inp_password : String) {
         let newUser = PFUser()
+        
         newUser.email = inp_email
         newUser.password = inp_password
         
         newUser.signUpInBackground {(succeeded: Bool, error: Error?)-> Void in
             if let error = error {
                 let errorString = error.localizedDescription
+                print (">>>>>>came here?")
                 let alertController = UIAlertController(title: "Try again", message: errorString, preferredStyle: .alert)
                 
                 // add ok button
@@ -49,6 +51,8 @@ class LoginViewController: UIViewController {
                 // Hooray! Let them use the app now.
                 // create a segue
                 print ("signed up")
+                // login the user
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
         }
     }
@@ -60,8 +64,9 @@ class LoginViewController: UIViewController {
             if user != nil {
                 print ("logged in")
                 // perform segue
-                // create a segue
                 print ("logged in")
+                // create a segue
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else {
                     let errorString = error?.localizedDescription
