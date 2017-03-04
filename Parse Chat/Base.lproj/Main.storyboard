@@ -108,7 +108,7 @@
                                 <rect key="frame" x="0.0" y="118" width="375" height="549"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="gJ2-WQ-HLR" customClass="MessageTableViewCell" customModule="Parse_Chat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" rowHeight="88" id="gJ2-WQ-HLR" customClass="MessageTableViewCell" customModule="Parse_Chat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJ2-WQ-HLR" id="Q8N-MG-lme">
@@ -152,6 +152,7 @@
                     <navigationItem key="navigationItem" title="Chat" id="069-hs-8ca"/>
                     <connections>
                         <outlet property="messageText" destination="T1h-uE-wsN" id="mio-lT-AXy"/>
+                        <outlet property="tableView" destination="sKh-Ai-ovP" id="p2F-Yi-1VQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puV-iC-PWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
