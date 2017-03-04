@@ -32,11 +32,10 @@ class LoginViewController: UIViewController {
         newUser.email = inp_email
         newUser.password = inp_password
         
-        
-        newUser.signUpInBackground {
-            (succeeded: Bool, error: Error?) -> Void in
-            if error != nil {
-                let alertController = UIAlertController(title: "Try again", message: "Username or Password is not valid", preferredStyle: .alert)
+        newUser.signUpInBackground {(succeeded: Bool, error: Error?)-> Void in
+            if let error = error {
+                let errorString = error.localizedDescription
+                let alertController = UIAlertController(title: "Try again", message: errorString, preferredStyle: .alert)
                 
                 // add ok button
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: {
@@ -44,27 +43,40 @@ class LoginViewController: UIViewController {
                 })
                 
                 alertController.addAction(okAction)
-                
-                //present(alertController, animated: true)
-                
                 // Show the errorString somewhere and let the user try again.
+                self.present(alertController, animated: true)
             } else {
                 // Hooray! Let them use the app now.
+                // create a segue
+                print ("signed up")
             }
         }
     }
     
     // allows users to login
-    func login(inp_email: String, inp_password: String) {
-        let alertController = UIAlertController(title: "This is title", message: "message part", preferredStyle: .alert)
+    func login(inp_username: String, inp_password: String) {
         
-        // add cancel button
-        let cancelAction = UIAlertAction(title: "OK", style: .cancel) {
-            (action) in
+        PFUser.logInWithUsername(inBackground: "\(inp_username)", password: "\(inp_password)") { (user: PFUser?, error: Error?) -> Void in
+            if user != nil {
+                print ("logged in")
+                // perform segue
+                // create a segue
+                print ("logged in")
+            }
+            else {
+                    let errorString = error?.localizedDescription
+                    let alertController = UIAlertController(title: "Try again", message: errorString, preferredStyle: .alert)
+                    
+                    // add ok button
+                    let okAction = UIAlertAction(title: "OK", style: .cancel, handler: {
+                        (action) in
+                    })
+                    
+                    alertController.addAction(okAction)
+                    // Show the errorString somewhere and let the user try again.
+                self.present(alertController, animated: true)
+            }
         }
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true)
     }
     
     // button actions
@@ -76,7 +88,7 @@ class LoginViewController: UIViewController {
         signup(inp_email: email, inp_password: password)
     }
         else {
-            let alertController = UIAlertController(title: "Empty Email or Password", message: "Email or password cannot be empty", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Empty Email or Password", message: "Email and password cannot be empty. Must provide Email", preferredStyle: .alert)
             
             let okButton = UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
             })
@@ -89,14 +101,14 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func onLogin(_ sender: Any) {
-        let email = emailTextField.text! as String
+        let username = emailTextField.text! as String
         let password = passwordTextField.text! as String
 
-        if email != "" && password != ""{
-            login(inp_email: email, inp_password: password)
+        if username != "" && password != ""{
+            login(inp_username : username, inp_password: password)
         }
         else {
-            let alertController = UIAlertController(title: "Empty Email or Password", message: "Email or password cannot be empty", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Empty Username or Password", message: "Username and password cannot be empty. Must provide username for login", preferredStyle: .alert)
             
             let okButton = UIAlertAction(title: "OK", style: .cancel, handler: {(action) in
             })
