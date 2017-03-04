@@ -17,6 +17,7 @@ The following **required** functionality is complete:
 The following **optional** features are implemented:
 
 The following **additional** features are implemented:
+- [x] Use timer
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
@@ -33,7 +34,6 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Lack of laptop, so waiting till midterms for my friends end on tuesday
 
 ## License
 
