@@ -90,13 +90,38 @@
                     <view key="view" contentMode="scaleToFill" id="Ovq-GT-5qL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Say Something" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1h-uE-wsN">
+                                <rect key="frame" x="8" y="80" width="307" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vN8-F4-1g3">
+                                <rect key="frame" x="331" y="80" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="onSend:" destination="f7d-uj-e9t" eventType="touchUpInside" id="aN8-HS-ZAh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vN8-F4-1g3" firstAttribute="top" secondItem="l4c-9t-mKA" secondAttribute="bottom" constant="16" id="GFR-b6-PRy"/>
+                            <constraint firstAttribute="trailing" secondItem="vN8-F4-1g3" secondAttribute="trailing" constant="8" id="bHI-d6-FUe"/>
+                            <constraint firstItem="T1h-uE-wsN" firstAttribute="leading" secondItem="Ovq-GT-5qL" secondAttribute="leading" constant="8" id="gUo-Y4-xrN"/>
+                            <constraint firstItem="T1h-uE-wsN" firstAttribute="top" secondItem="l4c-9t-mKA" secondAttribute="bottom" constant="16" id="qaj-jW-eYC"/>
+                            <constraint firstItem="vN8-F4-1g3" firstAttribute="leading" secondItem="T1h-uE-wsN" secondAttribute="trailing" constant="16" id="uJj-KJ-IGP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="069-hs-8ca"/>
+                    <connections>
+                        <outlet property="messageText" destination="T1h-uE-wsN" id="mio-lT-AXy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puV-iC-PWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2846" y="124"/>
+            <point key="canvasLocation" x="2845.5999999999999" y="123.68815592203899"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tsi-nT-Nmc">
