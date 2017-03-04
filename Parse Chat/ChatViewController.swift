@@ -37,7 +37,6 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if error == nil {
                 // The find succeeded.
                 self.messages = objects
-                print(">>>>>>>>>>>>>>>>>Successfully retrieved \(objects!.count) messages.")
                 self.tableView.reloadData()
                 
             } else {
