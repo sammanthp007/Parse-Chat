@@ -104,14 +104,49 @@
                                     <action selector="onSend:" destination="f7d-uj-e9t" eventType="touchUpInside" id="aN8-HS-ZAh"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sKh-Ai-ovP">
+                                <rect key="frame" x="0.0" y="118" width="375" height="549"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="gJ2-WQ-HLR" customClass="MessageTableViewCell" customModule="Parse_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="88"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gJ2-WQ-HLR" id="Q8N-MG-lme">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey baby, I think I wanna marry you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-ij-8dG">
+                                                    <rect key="frame" x="8" y="8" width="270" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tL7-ij-8dG" firstAttribute="top" secondItem="Q8N-MG-lme" secondAttribute="top" constant="8" id="8YY-AX-PAS"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tL7-ij-8dG" secondAttribute="trailing" constant="8" id="KXb-Ss-7xl"/>
+                                                <constraint firstItem="tL7-ij-8dG" firstAttribute="leading" secondItem="Q8N-MG-lme" secondAttribute="leading" constant="8" id="TYT-nV-DpZ"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tL7-ij-8dG" secondAttribute="bottom" constant="8" id="Uoy-Sq-1hN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="tL7-ij-8dG" id="DAH-hb-7Rn"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="sKh-Ai-ovP" firstAttribute="leading" secondItem="Ovq-GT-5qL" secondAttribute="leading" id="5UA-4i-NjC"/>
                             <constraint firstItem="vN8-F4-1g3" firstAttribute="top" secondItem="l4c-9t-mKA" secondAttribute="bottom" constant="16" id="GFR-b6-PRy"/>
+                            <constraint firstItem="sKh-Ai-ovP" firstAttribute="top" secondItem="vN8-F4-1g3" secondAttribute="bottom" constant="8" id="REW-JR-LXD"/>
                             <constraint firstAttribute="trailing" secondItem="vN8-F4-1g3" secondAttribute="trailing" constant="8" id="bHI-d6-FUe"/>
                             <constraint firstItem="T1h-uE-wsN" firstAttribute="leading" secondItem="Ovq-GT-5qL" secondAttribute="leading" constant="8" id="gUo-Y4-xrN"/>
+                            <constraint firstAttribute="trailing" secondItem="sKh-Ai-ovP" secondAttribute="trailing" id="gmR-TK-wac"/>
                             <constraint firstItem="T1h-uE-wsN" firstAttribute="top" secondItem="l4c-9t-mKA" secondAttribute="bottom" constant="16" id="qaj-jW-eYC"/>
                             <constraint firstItem="vN8-F4-1g3" firstAttribute="leading" secondItem="T1h-uE-wsN" secondAttribute="trailing" constant="16" id="uJj-KJ-IGP"/>
+                            <constraint firstItem="GcO-Tf-Tsm" firstAttribute="top" secondItem="sKh-Ai-ovP" secondAttribute="bottom" id="wr8-uv-xQM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="069-hs-8ca"/>
