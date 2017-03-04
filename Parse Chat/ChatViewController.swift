@@ -26,8 +26,12 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
+    }
+    
+    func onTimer() {
         let query = PFQuery(className:"Message")
-        query.whereKeyExists("text")
+        query.whereKeyExists("text").includeKey("user")
         query.order(byDescending: "createdAt")
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) -> Void in
             if error == nil {
@@ -35,14 +39,13 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.messages = objects
                 print(">>>>>>>>>>>>>>>>>Successfully retrieved \(objects!.count) messages.")
                 self.tableView.reloadData()
-
+                
             } else {
                 // Log details of the failure
                 print("<><><><>Error: \(error?.localizedDescription)")
             }
         }
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let message = self.messages {
             return message.count

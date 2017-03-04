@@ -18,7 +18,14 @@ class MessageTableViewCell: UITableViewCell {
         didSet {
             messageLabel.text = messages.object(forKey: "text") as? String
             
-            
+            //let username = messages.object(forKey: "user")
+            let user = messages.object(forKey: "user") as? PFUser
+            if (user != nil) {
+                userLabel.text = user?.username
+            }
+            else {
+                userLabel.text = ""
+            }
         }
     }
     
