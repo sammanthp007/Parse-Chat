@@ -116,21 +116,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey baby, I think I wanna marry you" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL7-ij-8dG">
-                                                    <rect key="frame" x="8" y="8" width="270" height="21"/>
+                                                    <rect key="frame" x="72" y="8" width="270" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Samman" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKX-kq-l2Y">
+                                                    <rect key="frame" x="8" y="8" width="56" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="dKX-kq-l2Y" firstAttribute="top" secondItem="Q8N-MG-lme" secondAttribute="top" constant="8" id="2FC-No-CLc"/>
                                                 <constraint firstItem="tL7-ij-8dG" firstAttribute="top" secondItem="Q8N-MG-lme" secondAttribute="top" constant="8" id="8YY-AX-PAS"/>
+                                                <constraint firstItem="tL7-ij-8dG" firstAttribute="leading" secondItem="dKX-kq-l2Y" secondAttribute="trailing" constant="8" id="9Yc-W9-gxx"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tL7-ij-8dG" secondAttribute="trailing" constant="8" id="KXb-Ss-7xl"/>
-                                                <constraint firstItem="tL7-ij-8dG" firstAttribute="leading" secondItem="Q8N-MG-lme" secondAttribute="leading" constant="8" id="TYT-nV-DpZ"/>
+                                                <constraint firstItem="dKX-kq-l2Y" firstAttribute="leading" secondItem="Q8N-MG-lme" secondAttribute="leading" constant="8" id="PnI-IW-ChN"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tL7-ij-8dG" secondAttribute="bottom" constant="8" id="Uoy-Sq-1hN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="tL7-ij-8dG" id="DAH-hb-7Rn"/>
+                                            <outlet property="userLabel" destination="dKX-kq-l2Y" id="exd-t9-mdj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

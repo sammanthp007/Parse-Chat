@@ -12,10 +12,13 @@ import Parse
 class MessageTableViewCell: UITableViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var userLabel: UILabel!
     
     var messages: PFObject! {
         didSet {
             messageLabel.text = messages.object(forKey: "text") as? String
+            
+            
         }
     }
     

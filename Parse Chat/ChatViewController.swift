@@ -68,6 +68,7 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if messageText.text != "" {
             let message = PFObject(className: "Message")
             message["text"] = messageText.text
+            message["user"] = PFUser.current()
             message.saveInBackground(block: {(success: Bool?, error: Error?) in
                 if success == true {
                     print ("message sent")
